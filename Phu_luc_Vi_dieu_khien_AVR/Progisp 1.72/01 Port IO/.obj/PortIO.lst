@@ -1,0 +1,48 @@
+   1               		.file	"PortIO.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB2:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.LM2:
+  26 0000 BE9A      		sbi 55-32,6
+  27               	.LM3:
+  28 0002 BD98      		cbi 55-32,5
+  29               	.LM4:
+  30 0004 C59A      		sbi 56-32,5
+  31               	.L5:
+  32               	.LM5:
+  33 0006 B599      		sbic 54-32,5
+  34 0008 00C0      		rjmp .L2
+  35               	.LM6:
+  36 000a C69A      		sbi 56-32,6
+  37 000c 00C0      		rjmp .L5
+  38               	.L2:
+  39               	.LM7:
+  40 000e C698      		cbi 56-32,6
+  41 0010 00C0      		rjmp .L5
+  42               	.LFE2:
+  68               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 PortIO.c
+C:\Users\user\AppData\Local\Temp/ccuFWPVp.s:2      *ABS*:0000003f __SREG__
+C:\Users\user\AppData\Local\Temp/ccuFWPVp.s:3      *ABS*:0000003e __SP_H__
+C:\Users\user\AppData\Local\Temp/ccuFWPVp.s:4      *ABS*:0000003d __SP_L__
+C:\Users\user\AppData\Local\Temp/ccuFWPVp.s:5      *ABS*:00000034 __CCP__
+C:\Users\user\AppData\Local\Temp/ccuFWPVp.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\user\AppData\Local\Temp/ccuFWPVp.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\user\AppData\Local\Temp/ccuFWPVp.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
